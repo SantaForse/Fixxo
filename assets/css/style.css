@@ -65,7 +65,8 @@ html,
 body {
     font-family: var(--font-poppins);
     font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-16);
+    /* with it buttons do not look as theu supposed to look */
+    /* font-size: var(--font-size-16); */
 }
 
 /* Black button -> red */
