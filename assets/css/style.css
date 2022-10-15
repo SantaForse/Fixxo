@@ -60,7 +60,7 @@
 
 }
 
-/* General */
+/* General stuff */
 html,
 body {
     font-family: var(--font-poppins);
@@ -68,6 +68,15 @@ body {
     /* with it buttons do not look as theu supposed to look */
     /* font-size: var(--font-size-16); */
 }
+
+a {
+    color: var(--color-theme);
+    text-decoration: none;
+}
+    a:hover {
+        color: var(--color-theme);
+        text-decoration: underline;
+    }
 
 /* Black button -> red */
 .btn-theme-dark {
@@ -233,15 +242,7 @@ body {
 
 
 
-a {
-    color: var(--color-theme);
-    text-decoration: none;
-}
-    a:hover {
-        color: var(--color-theme);
-        text-decoration: underline;
-    }
-
+/* the start of the page */
     .__gradient-gray {
         background: var(--linear-gradient-dark);
         background: linear-gradient(90deg, var(--linear-gradient-dark) 0%, var(--linear-gradient-light) 100%);
@@ -254,6 +255,10 @@ a {
 
     .bg-theme {
         background-color: var(--color-theme);
+    }
+
+    header {
+        margin-bottom: 135px;
     }
 
     .__navbar {
@@ -312,6 +317,7 @@ a {
                 text-decoration: none;
             }
 
+/* showcase */
 .__showcase {
     display: flex;
     justify-content: space-between;
@@ -331,17 +337,76 @@ a {
     .__showcase .__img-right {
         margin-right: -127px;
     }  
-            
+
+    .__showcase .__showcase-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }  
+        .__showcase .__showcase-body h1 {
+            font-size: var(--font-size-65);
+            font-weight: var(--font-weight-extra-bold);
+
+        }
+
+        .__showcase .__showcase-body >p {
+            margin-top: 50px;
+            margin-bottom: 35px;
+            font-size: var(--font-size-20);
+        }
 
 
-    
-
-   
 
 
 
 
 
+/* contact page */
+/* breadcrumb part: home->contacts */
+
+.breadcrumb {
+    margin-top: 20px;
+}
+
+    .breadcrumb .container {
+        max-width: 1110px;
+    }
+
+        .breadcrumb .breadcrumb-list {
+            list-style: none;
+            margin: 0 0 40px 0;
+            padding: 0;
+            color: var(--color-theme);
+        }   
+
+                .breadcrumb .breadcrumb-list li {
+                display: inline-block;
+                font-weight: var(--font-weight-medium);
+            }
+
+                    .breadcrumb .breadcrumb-list li + li:before {
+                    content: ">\00a0";
+                    font-weight: var(--font-weight-regular);
+                    color: var(--color-main);
+                }
+
+                .breadcrumb .breadcrumb-list li a {
+                    color: var(--color-main);
+                }
+
+                    .breadcrumb .breadcrumb-list li a:hover {
+                        color: var(--color-theme);
+                    }
+
+.map {
+    margin-bottom: 70px ;
+}
+    .map .google-map {
+        border:0; width: 100%; height: 380px;
+    }
+
+
+        
 
 
 
