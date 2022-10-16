@@ -6,6 +6,8 @@
     --color-main: #222529;
     --color-dark: #23262a;
     --color-shadow: rgba(0, 0, 0, 0.06);
+    --color-lightgray: rgb(112, 112, 112, 0.40);
+    --color-copyright: #f8f8f8;
     --linear-gradient-dark: #e6e6e6;
     --linear-gradient-light: #f5f5f5;
 
@@ -240,6 +242,23 @@ a {
             height: 20px;
         }
 
+/* contact page button */
+.btn-theme-contact {
+    position: relative;
+    background-color: var(--color-theme);
+    color: var(--color-white);
+    border: none;
+    padding: 20px 50px;
+    font-weight: var(--font-weight-semi-bold);
+    transition: background 200ms ease-in-out;
+}
+
+    .btn-theme-contact:hover {
+        color: var(--color-white) !important;
+        background-color: var(--color-dark);
+        text-decoration: none;
+    }
+
 
 
 /* the start of the page */
@@ -405,7 +424,93 @@ a {
         border:0; width: 100%; height: 380px;
     }
 
+.contact-form {
+    margin-bottom: 60px;
+}
 
+    .contact-form .container {
+        max-width: 1110px;
+        justify-content: center;
+    }
+
+        .contact-form h2 {
+            font-size: var(--font-size-18);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 30px;
+        }
+
+        .contact-form form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+            .contact-form form input {
+                width: 100%;
+                padding: 18px 20px;
+                border: 1px solid var(--color-lightgray);
+            }
+
+            .contact-form form .textarea {
+                grid-column: 1/-1;
+            }
+
+            .contact-form form textarea {
+                width: 100%;
+                grid-column: 1/-1;
+                padding: 18px 20px;
+                border: 1px solid var(--color-lightgray);
+                min-height: 140px;
+                resize: none;
+            }
+
+            .contact-form form .error {
+                color: var(--color-theme);
+                border: 1px solid var(--color-theme);
+            }
+
+
+            .contact-form form .errorMessage {
+                margin-top:5px;
+                color: var(--color-theme);
+                font-size: 0.8em;
+            }
+
+            
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-copyright);
+    padding: 25px;
+}
+
+    footer .social-media {
+        margin-bottom: 25px;
+    }
+        
+
+        footer .social-media a {
+            font-size: var(--font-size-14);
+            color: var(--color-dark);
+            text-decoration: none;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+            footer .social-media a:hover {
+                color: var(--color-theme);
+            }
+
+
+           
+            
+
+
+    
         
 
 

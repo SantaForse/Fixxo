@@ -41,7 +41,6 @@
             </a>
         </div>
     </nav>
-   
 
     <section class="breadcrumb">
         <div class="container">
@@ -56,7 +55,45 @@
         <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130312.9304624841!2d17.961112580894063!3d59.31392687527244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77f93374a385%3A0xc045ff16b9bceaa4!2sFotografiska!5e0!3m2!1ssv!2sse!4v1665862404728!5m2!1ssv!2sse" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
+   
+        <section class="contact-form">
+            <div class="container">
+                <h2>Come in Contact with Us</h2>   
+                <form onsubmit="submitForm(event)" novalidate>
+                    <div>
+                        <input id="name" type="text" onkeyup="validate(event)" placeholder="Your Name">
+                        <div id="nameErrorMessage" class="errorMessage"></div>
+                    </div>
+                    <div>
+                        <input id="email" type="email" onkeyup="validate(event)" placeholder="Your Mail">
+                        <div id="emailErrorMessage" class="errorMessage"></div>
+                    </div>
+                    
+                    <div class="textarea">
+                        <textarea id="comment" onkeyup="validate(event)" placeholder="Comments"></textarea>
+                        <div id="commentErrorMessage" class="errorMessage"></div>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="btn-theme-contact"> 
+                            Post Comments
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-    <div style="height: 5000px;"></div>
+        <footer>
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div>© 2022 Fixxo. All Rights Reserved</div>
+        </footer>
+
+       
 </body>
 </html> 
