@@ -13,17 +13,13 @@ const checkLength = (element, ErrorMessage = "", minLength = 1) => {
 }
 
 const checkEmail = (element, ErrorMessage = "") => {
-    if (!element.target.value.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+    if (!element.target.value.match {
         document.getElementById(element.target.id).classList.add('error')
         document.getElementById(`${element.target.id}ErrorMessage`).innerText = ErrorMessage  
     } else {
         document.getElementById(element.target.id).classList.remove('error')
         document.getElementById(`${element.target.id}ErrorMessage`).innerText = ""
-
     }
-
-    
-
 }
 
 
