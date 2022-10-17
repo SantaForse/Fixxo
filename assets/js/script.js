@@ -1,49 +1,69 @@
+
 const submitForm = event => {
     event.preventDefault()
+    validate(event)
+}
 
-    for (let element of event.target) {
-        if (element.required){
-        
-            let error = ""
+const validate = (event) => {
+    switch(event.type) {
+        case 'keyup':
+            validateElement(event.target)
+            break;
 
-            switch(element.type) {
-                case 'text':
-                    if (!isNullOrEmpty(element.value)) {
-                        if (!isMinimumLength(element.value, 2)) {
-                            error = `Your ${element.id} must contain at least 2 letters.`
-                        } 
-                    } else {
-                        error = `You must enter a ${element.id}.`
-                    }
-                    break;
-
-                case 'email':
-                    if (!isNullOrEmpty(element.value)) {
-                        if (!isMinimumLength(element.value, 5)) {
-                            error = `Your ${element.id} must contain at least 5 letters.`
-                        } 
-                    } else {
-                        error = `You must enter an ${element.id}.`
-                    }
-                    break;
-
-                case 'textarea':
-                    if (!isNullOrEmpty(element.value)) {
-                        if (!isMinimumLength(element.value, 10)) {
-                            error = `Your ${element.id} must contain at least 10 letters.`
-                        } 
-                    } else {
-                        error = `You must enter a ${element.id}.`
-                    }
-                    break;
-            }
-
-            document.getElementById(`${element.id}ErrorMessage`).innerText = error
-
-        }    
+            case 'submit':
+                for(let element of event.target)
+                validateElement(element)
+            break;
     }
 }
+
+const validateElement = (element) => {
     
+    if (element.required){
+        
+        let error = ""
+
+        switch(element.type) {
+            case 'text':
+                if (!isNullOrEmpty(element.value)) {
+                    if (!isMinimumLength(element.value, element.dataset.requiredMin)) {
+                        error = `Your ${element.id.toLocaleLowerCase()} must contain at least ${element.dataset.requiredMin} letters.`
+                    } 
+                } else {
+                    error = `You must enter a ${element.id.toLocaleLowerCase()}.`
+                }
+                break;
+
+            case 'email':
+                if (!isNullOrEmpty(element.value)) {
+                    if(!isEmailValid(element.value)) {
+                        error = `Your ${element.id.toLocaleLowerCase()} is invalid (example: example@domain.com).`
+
+                    }
+                } else {
+                    error = `You must enter an ${element.id.toLocaleLowerCase()}.`
+                }
+                break;
+
+            case 'textarea':
+                if (!isNullOrEmpty(element.value)) {
+                    if (!isMinimumLength(element.value, element.dataset.requiredMin)) {
+                        error = `Your ${element.id.toLocaleLowerCase()} must contain at least ${element.dataset.requiredMin} characters.`
+                    } 
+                } else {
+                    error = `You must enter a ${element.id.toLocaleLowerCase()}.`
+                }
+                break;
+        }
+
+        document.getElementById(`${element.id.toLocaleLowerCase()}ErrorMessage`).innerText = error
+
+    }
+
+}
+
+
+
 
 
 
@@ -61,6 +81,16 @@ const isNullOrEmpty = value => {
 
 const isMinimumLength = (value, minLength = 2) => {
     if (value.length >= minLength) {
+        return true
+    } else {
+        return false
+    }
+}
+
+const isEmailValid = (email) => {
+    const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/d
+
+    if (regEx.test(email)) {
         return true
     } else {
         return false

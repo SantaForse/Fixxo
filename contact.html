@@ -62,16 +62,16 @@
                 <h2>Come in Contact with Us</h2>   
                 <form onsubmit="submitForm(event)" novalidate>
                     <div>
-                        <input id="name" type="text" placeholder="Your Name" required>
+                        <input id="name" type="text" placeholder="Your Name" onkeyup="validate(event)" required data-required-min="2">
                         <div id="nameErrorMessage" class="errorMessage"></div>
                     </div>
                     <div>
-                        <input id="email" type="email" " placeholder="Your Mail" required>
+                        <input id="email" type="email" " placeholder="Your Mail" onkeyup="validate(event)" required data-required-min="5">
                         <div id="emailErrorMessage" class="errorMessage"></div>
                     </div>
                     
                     <div class="textarea">
-                        <textarea id="comment" placeholder="Comments" required></textarea>
+                        <textarea id="comment" placeholder="Comments" onkeyup="validate(event)" required data-required-min="10"></textarea>
                         <div id="commentErrorMessage" class="errorMessage"></div>
                     </div>
                     
